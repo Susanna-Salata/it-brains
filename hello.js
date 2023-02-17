@@ -1,1 +1,3 @@
-alert ("Hello Kyrylo!")
+alert ("Hello, Kyrylo!")
+
+alert ("Hello again!")
