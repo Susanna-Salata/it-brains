@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Заголовок документу</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <form
+      id="form_id"
+      oninput="output_1.value=parseInt(a.value)+parseInt(b.value)"
+    >
+      <input type="number" id="b" value="25" />
+      <input type="number" id="a" value="25" />
+
+      <output name="output_1" for="a b" form="form_id"></output>
+    </form>
+  </body>
+</html>
