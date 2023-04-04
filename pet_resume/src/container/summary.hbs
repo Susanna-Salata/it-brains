@@ -46,9 +46,11 @@
     <footer>
         <hr>
         <br>
-        <a href="social.email.href">{{social.email.text}}</a> /
-        <a href="social.phone.href">{{social.phone.text}}</a> /
-        <a href="social.facebook.href" target="_blank">{{social.facebook.text}}</a>
+        {{#with social}}
+            {{>link data=email}}
+            {{>link data=phone}}
+            {{>link data=facebook}}
+        {{/with}}
     </footer>
 
 </div>

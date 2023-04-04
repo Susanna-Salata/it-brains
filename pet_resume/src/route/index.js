@@ -39,15 +39,15 @@ router.get('/summary', function (req, res) {
       },
       phone: {
         text: '+380934930101',
-        href: 'tel: +380934930101',
+        href: 'tel:+380934930101',
       },
       facebook: {
         text: 'Facebook',
         href: 'https://www.facebook.com/susanna.kiev',
       },
     },
-    })
   })
+})
 
 // ================================================================
 
