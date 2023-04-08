@@ -12,34 +12,30 @@
             <b>{{position}}</b>
         </div>
         <br>
+        <div>
+            <em> {{salary}} </em>
+        </div>
+        <br>
         <hr>
     </header>
 
     <main>
         <section>
+            {{#with summary}}
             <div>
-                <h2>Summary</h2>
+                <h2>{{title}}</h2>
             </div>
             <div>
-                <p>
-                    Open-minded for new technologies, with 1 years of experience in development. Whenever I start to
-                    work on a new project I learn the domain and try to understand the idea of the project. Good team
-                    player, every colleague is a friend to me.
-                </p>
+                <p> {{text}} </p> 
             </div>
+            {{/with}}
         </section>
 
         <section>
-            <div>
-                <h2>Other experience</h2>
-            </div>
-            <div>
-                <p>
-                    Pet project for parsing sport betting data from different platforms ( odds ) and sport statistics (
-                    tournament position, goals etc), analyzing by simple mathematics models and preparing probability
-                    for such events like: money line - first win / draw / second win, totals etc.
-                </p>
-            </div>
+            {{#with experience}}
+                {{>title data=job_1}}
+                {{>title data=job_2}}
+            {{/with}}
         </section>
     </main>
 
