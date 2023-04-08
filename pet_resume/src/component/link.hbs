@@ -1,3 +1,8 @@
-{{#with data}}
-    <a href="{{href}}">{{text}}</a> /
-{{/with}}
+<a href="{{href}}" {{#if blank}} target="_blank" {{/if}} >{{text}}</a> 
+
+
+{{#if line}} 
+    ---
+{{else }}
+    /
+{{/if}}

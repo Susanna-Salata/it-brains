@@ -32,8 +32,8 @@
 	{{/with}}
 
     <nav>
-      <a href="/skils">Skills</a>
-      <a href="/summary">Summary</a>
+		{{> link text="Summary" href="/summary" line=true }}
+		{{> link text="Skills" href="/skils" line=true }}
     </nav>
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
     {{{body}}}
@@ -43,9 +43,9 @@
 			<hr>
 			<br>
 			{{#with social}}
-			{{>link data=email}}
-			{{>link data=phone}}
-			{{>link data=facebook}}
+			{{> link text=email.text href=email.href blank=true }}
+			{{> link text=phone.text href=phone.href blank=true }}
+			{{> link text=facebook.text href=facebook.href blank=true }}
 			{{/with}}
 		</footer>
 	{{/with}}
