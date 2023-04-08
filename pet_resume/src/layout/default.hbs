@@ -14,8 +14,37 @@
   </head>
 
   <body>
+    <header>
+      <div>
+        <h1>{{title}}</h1>
+      </div>
+      <div>
+        <b>{{position}}</b>
+      </div>
+      <br>
+      <div>
+        <em> {{salary}} </em>
+      </div>
+      <br>
+      <hr>
+    </header>
+
+    <nav>
+      <a href="/skils">Skills</a>
+      <a href="/summary">Summary</a>
+    </nav>
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
     {{{body}}}
+
+	<footer>
+		<hr>
+		<br>
+		{{#with social}}
+		{{>link data=email}}
+		{{>link data=phone}}
+		{{>link data=facebook}}
+		{{/with}}
+	</footer>
   </body>
 
 </html>

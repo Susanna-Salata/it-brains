@@ -76,5 +76,39 @@ router.get('/summary', function (req, res) {
 
 // ================================================================
 
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/skils', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('skills', {
+    // ↙ сюди вводимо JSON дані
+    title: 'Susanna Salata | Resume',
+    
+    name: {
+      firstname:'Susanna',
+      lastname: 'Salata',
+    },
+
+    position: 'Junior Fullstack JS Developer', 
+    salary: '600$',
+        
+    social: {
+      email: {
+        text: 'susanna.kiev@gmail.com',
+        href: 'mailto:susanna.kiev@gmail.com',
+      },
+      phone: {
+        text: '+380934930101',
+        href: 'tel:+380934930101',
+      },
+      facebook: {
+        text: 'Facebook',
+        href: 'https://www.facebook.com/susanna.kiev',
+      },
+    },
+  })
+})
+
 // Підключаємо роутер до бек-енду
 module.exports = router
