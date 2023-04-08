@@ -34,7 +34,8 @@ router.get('/summary', function (req, res) {
 		lastname: 'Salata',
 	  },
 		position: 'Junior Fullstack JS Developer', 
-    	salary: '600$',
+		salary: '600$',
+		address: 'Poland',
 	},
 	  
 	  main: {
@@ -101,10 +102,68 @@ router.get('/skils', function (req, res) {
 		lastname: 'Salata',
 	  },
 		position: 'Junior Fullstack JS Developer', 
-    	salary: '600$',
+		salary: '600$',
+		address: 'Poland',
 	},
 	  
-	  main: {  },
+	  main: { 
+		  skills: [
+			  "HTML",
+			  "Handlebars",
+			  "VS Code",
+			  "Git",
+			  "Terminal",
+			  "NPM",
+		  ]
+	   },
+    
+	  footer: {
+		social: {
+			email: {
+				text: 'susanna.kiev@gmail.com',
+				href: 'mailto:susanna.kiev@gmail.com',
+			},
+			phone: {
+				text: '+380934930101',
+				href: 'tel:+380934930101',
+			},
+			facebook: {
+				text: 'Facebook',
+				href: 'https://www.facebook.com/susanna.kiev',
+			},
+		},
+	  },
+  })
+})
+
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/education', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('education', {
+    // ↙ сюди вводимо JSON дані
+
+	  page: {
+		title: 'Resume'
+	  },
+	
+	  header: {
+		name: {
+		firstname:'Susanna',
+		lastname: 'Salata',
+	  },
+		position: 'Junior Fullstack JS Developer', 
+		salary: '600$',
+		address: 'Poland',
+	},
+
+	  main: { 
+		  education: [
+			  "KNEU",
+			  "IT Brains",
+		  ]
+	   },
     
 	  footer: {
 		social: {

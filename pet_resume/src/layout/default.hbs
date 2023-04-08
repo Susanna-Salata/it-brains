@@ -27,6 +27,10 @@
 				<em> {{salary}} </em>
 			</div>
 			<br>
+            <div>
+                <address> {{address}} </address>
+            </div>
+            <br>
 			<hr>
 			</header>
 	{{/with}}
@@ -34,7 +38,9 @@
     <nav>
 		{{> link text="Summary" href="/summary" line=true }}
 		{{> link text="Skills" href="/skils" line=true }}
+        {{> link text="Education" href="/education" line=true }}
     </nav>
+
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
     {{{body}}}
 
@@ -42,11 +48,19 @@
 		<footer>
 			<hr>
 			<br>
-			{{#with social}}
-			{{> link text=email.text href=email.href blank=true }}
-			{{> link text=phone.text href=phone.href blank=true }}
-			{{> link text=facebook.text href=facebook.href blank=true }}
-			{{/with}}
+            <div>
+                {{#with social}}
+                    {{> link text=email.text href=email.href blank=true }}
+                    {{> link text=phone.text href=phone.href blank=true }}
+                    {{> link text=facebook.text href=facebook.href blank=true }}
+                {{/with}}
+            </div>
+            <br>
+            <div>
+                <em> Copyright by {{../header.name.firstname}} {{../header.name.lastname}} </em> 
+                <br>
+                <em>{{../header.address}}</em>
+            </div>
 		</footer>
 	{{/with}}
   </body>
