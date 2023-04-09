@@ -7,22 +7,26 @@
     {{#with main}}
         <main>
             <section>
-                {{#with summary}}
+                {{> title data=summary.title big=true}}
                 <div>
-                    <h2>{{title}}</h2>
+                    <p> {{summary.text}} </p> 
                 </div>
-                <div>
-                    <p> {{text}} </p> 
-                </div>
-                {{/with}}
             </section>
 
-            <section>
-                {{#with experience }}
-                    {{> title data=job_1 big=true}}
-                    {{> title data=job_2 big=false}}
-                {{/with}}
-            </section>
+            <ul>
+            {{#each experience }}
+                <li>
+                    <section>
+                        {{> title data=title big=false}}
+                        <div>
+                            <p>
+                                {{text}}
+                            </p>
+                        </div>
+                    </section>
+                </li>
+            {{/each}}
+            </ul>
         </main>
     {{/with}}
 </div>
