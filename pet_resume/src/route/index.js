@@ -202,5 +202,81 @@ router.get('/education', function (req, res) {
   })
 })
 
+
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/work', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('work', {
+    // ↙ сюди вводимо JSON дані
+
+	  layout: 'big',
+	  
+	  page: {
+		title: 'Resume | Work',
+	  },
+	
+	  header,
+
+	  main: {
+		  works: [
+			  {
+				position: 'Junior Fullstck Developer',
+				company: {
+					name: 'IT Brains',
+					url: 'https://it-brains.com.ua/',
+				},
+				duration: {
+					from: '10.10.2022',
+					to: null,
+				},
+			  },
+			  {
+				position: 'Intern Fullstck Developer',
+				company: {
+					name: 'IT Brains',
+					url: 'https://it-brains.com.ua/',
+				},
+				duration: {
+					from: '04.04.2022',
+					to: '10.10.2022',
+				},
+				  projectAmount: 3,
+				
+				  projects: [
+					  {
+					  name: 'Resume',
+					  url: 'https://resume.com.ua',
+					  about: 'It is my first project',
+					  stacks: [
+						{
+						name: 'HTML / CSS',
+						},
+						{
+						name: 'React.js',
+						},
+						{
+						name: 'Node.js',
+						},
+					  ],
+					awards: [
+						{
+							name: "Resume project_1"
+						},
+						{
+							name: "Resume project_2"
+						},
+					],
+				  },
+				],
+			  },
+		  ],
+	  },
+
+	  footer,
+  })
+})
+
 // Підключаємо роутер до бек-енду
 module.exports = router
