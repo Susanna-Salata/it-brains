@@ -104,7 +104,7 @@ router.get('/skils', function (req, res) {
 	  
 	  header,
 	  
-	  main: { 
+	  main: {
 		  skills: [
 			  {
 				  name: "HTML & CSS",
@@ -134,6 +134,21 @@ router.get('/skils', function (req, res) {
 				  point: null,
 			  },
 		  ],
+
+		  hobbies: [
+			  {
+				  name: "Reading",
+				  isMain: true,
+			  },
+			  {
+				  name: "Traveling",
+				  isMain: true,
+			  },
+			  {
+				  name: "Swimming",
+				  isMain: false,
+			  },
+		  ],
 	   },
     
 	  footer,
@@ -156,9 +171,31 @@ router.get('/education', function (req, res) {
 
 	  main: { 
 		  education: [
-			  "KNEU",
-			  "IT Brains",
-		  ]
+			  {
+				  name: "KNEU",
+				  years: "2003-2008",
+				  isEnd: true,
+			  },
+			  {
+				  name: "IT Brains",
+				  years: "2023",
+				  isEnd: false,
+			  },
+		  ],
+		  certificates: [
+			  {
+				name: "HTML+CSS",
+				id: 111,
+			  },
+			  {
+				name: "JS",
+				id: 222,
+			  },
+			  {
+				name: "Git",
+				id: 333,
+			  },
+		  ],
 	   },
     
 	  footer,

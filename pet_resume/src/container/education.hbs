@@ -10,9 +10,29 @@
                 {{> title data="Education"}}
                 <ul>
                     {{#each education}}
-                    <li> {{this}} </li>
+                    <li> 
+                        {{name}}
+                        
+                        {{#if years includeZero=true}} ({{years}}) {{/if}}
+                        
+                        {{#unless isEnd}}
+                            {{#if years isEnd=false}} (in progress) {{/if}}
+                        {{/unless}}
+                        
+                    </li>
                     {{/each}}
                 </ul>
+            </section>
+
+            <section>
+                {{> title data="Certificates"}}
+                <ol>
+                    {{#each certificates}}
+                    <li>
+                        {{name}} ({{id}})
+                    </li>
+                    {{/each}}
+                </ol>
             </section>
         </main>
     {{/with}}

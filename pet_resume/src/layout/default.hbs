@@ -16,6 +16,9 @@
   <body>
    {{#with header}}
 		<header>
+      <div>
+        <h1>{{name.firstname}} {{name.lastname}} </h1>
+      </div>
 			<div>
 				<h1>{{title}}</h1>
 			</div>
@@ -38,7 +41,7 @@
     <nav>
 		{{> link text="Summary" href="/summary" line=true }}
 		{{> link text="Skills" href="/skils" line=true }}
-        {{> link text="Education" href="/education" line=true }}
+    {{> link text="Education" href="/education" line=true }}
     </nav>
 
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}

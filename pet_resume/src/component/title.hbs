@@ -1,4 +1,8 @@
 {{#with data}}
-    <h2> {{title}} </h2> 
-    <div> {{text}} </div> 
+    {{#if data.title }}
+        <h2> {{title}} </h2> 
+        <div> {{text}} </div> 
+    {{else}}
+        <h3>{{.}}</h3>
+    {{/if}}
 {{/with}}
