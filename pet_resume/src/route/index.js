@@ -5,6 +5,35 @@ const router = express.Router()
 
 // ================================================================
 
+var header = {
+	name: {
+		firstname:'Susanna',
+		lastname: 'Salata',
+	},
+	position: 'Junior Fullstack JS Developer', 
+	salary: '600$',
+	address: "Gdansk, Polsnd",
+}
+
+var footer = {
+	social: {
+		email: {
+			text: 'susanna.kiev@gmail.com',
+			href: 'mailto:susanna.kiev@gmail.com',
+		},
+		phone: {
+			text: '+380934930101',
+			href: 'tel:+380934930101',
+		},
+		facebook: {
+			text: 'Facebook',
+			href: 'https://www.facebook.com/susanna.kiev',
+		},
+	},
+}
+	
+// ================================================================
+
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
@@ -25,18 +54,10 @@ router.get('/summary', function (req, res) {
     // ↙ сюди вводимо JSON дані
 
 	  page: {
-		title: 'Resume'
+		title: 'Resume | Summary',
 	  },
 	  
-	  header: {
-		name: {
-		firstname:'Susanna',
-		lastname: 'Salata',
-	  },
-		position: 'Junior Fullstack JS Developer', 
-		salary: '600$',
-		address: 'Poland',
-	},
+	  header,
 	  
 	  main: {
 		summary: {
@@ -63,22 +84,7 @@ router.get('/summary', function (req, res) {
 		},
 	  },
     
-	  footer: {
-		social: {
-			email: {
-				text: 'susanna.kiev@gmail.com',
-				href: 'mailto:susanna.kiev@gmail.com',
-			},
-			phone: {
-				text: '+380934930101',
-				href: 'tel:+380934930101',
-			},
-			facebook: {
-				text: 'Facebook',
-				href: 'https://www.facebook.com/susanna.kiev',
-			},
-		},
-	  },
+	  footer,
   })
 })
 
@@ -93,46 +99,44 @@ router.get('/skils', function (req, res) {
     // ↙ сюди вводимо JSON дані
 
 	  page: {
-		title: 'Resume'
+		title: 'Resume | Skills',
 	  },
 	  
-	  header: {
-		name: {
-		firstname:'Susanna',
-		lastname: 'Salata',
-	  },
-		position: 'Junior Fullstack JS Developer', 
-		salary: '600$',
-		address: 'Poland',
-	},
+	  header,
 	  
 	  main: { 
 		  skills: [
-			  "HTML",
-			  "Handlebars",
-			  "VS Code",
-			  "Git",
-			  "Terminal",
-			  "NPM",
-		  ]
+			  {
+				  name: "HTML & CSS",
+				  point: 9,
+				  isTop: true
+			  },
+			  {
+				  name: "Handlebars",
+				  point: 7,
+				  isTop: false
+			  },
+			  {
+				  name: "VS Code",
+				  point: 9,
+				  isTop: true
+			  },
+			  {
+				  name: "Git & Terminal",
+				  point: 5,
+			  },
+			  {
+				  name: "React.js",
+				  point: 0,
+			  },
+			  {
+				  name: "PHP",
+				  point: null,
+			  },
+		  ],
 	   },
     
-	  footer: {
-		social: {
-			email: {
-				text: 'susanna.kiev@gmail.com',
-				href: 'mailto:susanna.kiev@gmail.com',
-			},
-			phone: {
-				text: '+380934930101',
-				href: 'tel:+380934930101',
-			},
-			facebook: {
-				text: 'Facebook',
-				href: 'https://www.facebook.com/susanna.kiev',
-			},
-		},
-	  },
+	  footer,
   })
 })
 
@@ -145,18 +149,10 @@ router.get('/education', function (req, res) {
     // ↙ сюди вводимо JSON дані
 
 	  page: {
-		title: 'Resume'
+		title: 'Resume | Education',
 	  },
 	
-	  header: {
-		name: {
-		firstname:'Susanna',
-		lastname: 'Salata',
-	  },
-		position: 'Junior Fullstack JS Developer', 
-		salary: '600$',
-		address: 'Poland',
-	},
+	  header,
 
 	  main: { 
 		  education: [
@@ -165,22 +161,7 @@ router.get('/education', function (req, res) {
 		  ]
 	   },
     
-	  footer: {
-		social: {
-			email: {
-				text: 'susanna.kiev@gmail.com',
-				href: 'mailto:susanna.kiev@gmail.com',
-			},
-			phone: {
-				text: '+380934930101',
-				href: 'tel:+380934930101',
-			},
-			facebook: {
-				text: 'Facebook',
-				href: 'https://www.facebook.com/susanna.kiev',
-			},
-		},
-	  },
+	  footer,
   })
 })
 

@@ -10,7 +10,19 @@
                 {{> title data="Skills"}}
                 <ul>
                     {{#each skills}}
-                        <li> {{this}} </li>
+                        <li> 
+                            {{name}}
+
+                            {{#if point includeZero=true}} ({{point}}) {{/if}}
+                            {{#if isTop}} (top) {{/if}}
+
+                            {{#unless point}} 
+                                {{#if point includeZero=true}} (in progress) {{/if}}
+                            {{/unless}}
+
+                            {{#unless point includeZero=true}} (not studying) {{/unless}}
+
+                        </li>
                     {{/each}}
                 </ul>
             </section>
