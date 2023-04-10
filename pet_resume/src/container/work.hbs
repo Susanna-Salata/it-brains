@@ -24,9 +24,11 @@
                                         {{/if}} </div>
 
                                 <br>
-
-                                <div> {{> link text=company.name href=company.url blank=true noLine=true}} </div>
-                            
+                                {{#if company.url}}
+                                    <div> {{> link text=company.name href=company.url blank=true noLine=true}} </div>
+                                {{else}}
+                                    <div><b> {{company.name}} </b></div>
+                                {{/if}}
                                 <br>
                                 <br>
 
@@ -38,7 +40,31 @@
                                     {{#each projects}}
                                         <li>
                                             <div> {{> link text=name href=url blank=true noLine=true}} </div>
+                                                <div>
+                                                    <p>About: </p>
+                                                    <p> {{about}} </p>
+                                                </div>
+                                                
+                                                <div>
+                                                <p>Project stack:</p>
+                                                <ul>
+                                                    {{#each stack}}
+                                                    <li> {{this}} </li>
+                                                    {{/each}}
+                                                </ul>
+                                                </div>
+
+                                                <div>
+                                                    <em>Project awards</em>
+                                                    <ul>
+                                                        {{#each awards}}
+                                                            <li> {{this}} </li>
+                                                        {{/each}}
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </li>
+                                        <br>
                                     {{/each}}
                                 </ul>
                             </li>
