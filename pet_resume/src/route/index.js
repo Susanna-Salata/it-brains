@@ -32,7 +32,8 @@ var footer = {
 	},
 }
 
-var 
+
+
 	
 // ================================================================
 
@@ -244,7 +245,9 @@ router.get('/work', function (req, res) {
 					from: '04.04.2022',
 					to: '10.10.2022',
 				},
-				  projectAmount: 3,
+				projectAmount: 3,
+				stackAmount: 5,
+				awardAmount: 2,
 				
 				  projects: [
 					  {
