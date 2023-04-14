@@ -1,56 +1,56 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const hbs = require("hbs");
+const hbs = require('hbs');
 
-router.get("/", function (req, res, next) {
-  res.render("index",{
+router.get('/', function (req, res, next) {
+  res.render('index', {
     users: [
-      { 
-        firstname: "Susanna",
+      {
+        firstname: 'Susanna',
         lastname: null,
-        age:30,
+        age: 30,
         isAdmin: true,
         
         comments: [
           {
             id: 4312,
-            text: "Здоровенькі були",
+            text: 'Здоровенькі були',
           },
           {
             id: 543221,
-            text: "Привіт Світ",
+            text: 'Привіт Світ',
           },
         ],
       },
       {
-        firstname: "Dima",
-        lastname: "Ivanov",
+        firstname: 'Dima',
+        lastname: 'Ivanov',
         age: 20,
-        isAdmin: false
+        isAdmin: false,
       },
     ],
-  })
-});
+  }),
+}),
 
-router.get("/1", function (req, res, next) {
-  res.render("1-var", {
+router.get('/1', function (req, res, next) {
+  res.render('1-var', {
     user: { 
-      firstname: "Susanna",
+      firstname: 'Susanna',
       lastname: null,
       age:30,
       isAdmin: true,
       },
       role: 'Admin'
-  });
-});
+  })
+})
 
-router.get("/2", function (req, res, next) {
-  res.render("2-with", { 
+router.get('/2', function (req, res, next) {
+  res.render('2-with', {
     user: {
-      name: "Dima"
-    }, 
-    role: 'Admin'  
-  });
-});
+      name: 'Dima',
+    },
+    role: 'Admin',
+  })
+})
 
 module.exports = router;
