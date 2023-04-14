@@ -29,20 +29,20 @@ router.get('/', function (req, res, next) {
         isAdmin: false,
       },
     ],
-  }),
-}),
+  });
+});
 
 router.get('/1', function (req, res, next) {
   res.render('1-var', {
-    user: { 
+    user: {
       firstname: 'Susanna',
-      lastname: null,
-      age:30,
+      lastname: 'Salata',
+      age: 30,
       isAdmin: true,
-      },
-      role: 'Admin'
-  })
-})
+    },
+    role: 'Admin',
+  });
+});
 
 router.get('/2', function (req, res, next) {
   res.render('2-with', {
@@ -50,7 +50,7 @@ router.get('/2', function (req, res, next) {
       name: 'Dima',
     },
     role: 'Admin',
-  })
-})
+  });
+});
 
 module.exports = router;
