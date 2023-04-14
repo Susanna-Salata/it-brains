@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === "development") {
     }, 100);
   });
   app.use(connectLiveReload());
-}
+};
 
 const routes = require("./routes/index.js");
 
