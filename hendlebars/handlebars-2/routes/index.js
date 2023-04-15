@@ -61,4 +61,46 @@ router.get('/2', function (req, res, next) {
   });
 });
 
+router.get('/3', function (req, res, next) {
+  res.render('3-each', {
+    users: [
+      {
+        id: 123456,
+        firstname: 'Taras',
+        lastname: 'Tarasov',
+        age: 10,
+        isAdmin: true,
+
+        comments: [
+          {
+            id: 4321,
+            text: 'Hello, Taras',
+          },
+        ],
+      },
+
+      {
+        id: 123456,
+        firstname: 'Ivan',
+        lastname: 'Ivanov',
+        age: 20,
+        isAdmin: false,
+
+        comments: [
+          {
+            id: 1234,
+            text: 'Hello, Ivan',
+          },
+        ],
+      },
+    ],
+  });
+});
+
+router.get('/i', function (req, res, next) {
+  res.render('index', {
+    users: ['Kyrylo', 'Danylo', 'Ivan'],
+  });
+});
+
 module.exports = router;
