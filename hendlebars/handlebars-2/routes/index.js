@@ -47,9 +47,17 @@ router.get('/1', function (req, res, next) {
 router.get('/2', function (req, res, next) {
   res.render('2-with', {
     user: {
+      id: 123456,
       name: 'Dima',
     },
     role: 'Admin',
+    createDate: '15.04.2023',
+    
+    post: {
+      id: 987,
+      title: 'My first post in my blog',
+      text: 'Hello, Kyrylo!'
+    },
   });
 });
 
