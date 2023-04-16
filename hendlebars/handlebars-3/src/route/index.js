@@ -22,7 +22,7 @@ router.get('/users', function (req, res) {
           name: "Ivan",
           isAdmin: true,
           isConfirm: true,
-          balance: 0,
+          balance: 100,
         },
         {
           id: 1234,

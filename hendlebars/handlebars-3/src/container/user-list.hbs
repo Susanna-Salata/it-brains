@@ -9,16 +9,30 @@
             <li>
                 <div>ID: {{id}} </div>
                 <div>Name: {{name}} </div>
-                {{#if isAdmin}}
-                    <button>Send report</button>
-                {{else}}
-                    <button>Send messadge</button>
-                {{/if}}
+
+                <div>
+                    {{#if isAdmin}}
+                        {{> button text="Send report"}}
+
+                    {{else}}
+                        {{> button text="Send messadge"}}
+
+                    {{/if}}
+                </div>
 
                 {{#unless isConfirm}}
-                    <div><strong>You need a varification</strong></div>
+                    <div>
+                        {{> button text="You need a varification"}}
+                    </div>
                     
                 {{/unless}}
+                
+
+                {{#if balance includeZero=true }}
+                    <div><strong>Your balance: {{balance}} </strong></div>
+                {{/if}}
+
+                <br>
             </li>
         {{/each}}
     </ul>
