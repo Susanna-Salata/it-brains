@@ -9,4 +9,13 @@ router.get('/', function (req, res) {
   })
 })
 
+router.get('/users', function (req, res) {
+  res.render('user-list', {
+    layout: 'header',
+    title: 'Users page',
+    text: 'Click me',
+  })
+})
+
+
 module.exports = router
