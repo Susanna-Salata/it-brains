@@ -6,34 +6,20 @@
 
     <ul>
         {{#each data.userlist}}
-            <li>
-                <div>ID: {{id}} </div>
-                <div>Name: {{name}} </div>
-
-                <div>
-                    {{#if isAdmin}}
-                        {{> button text="Send report"}}
-
-                    {{else}}
-                        {{> button text="Send messadge"}}
-
-                    {{/if}}
-                </div>
-
-                {{#unless isConfirm}}
-                    <div>
-                        {{> button text="You need a varification"}}
-                    </div>
-                    
-                {{/unless}}
-                
-
-                {{#if balance includeZero=true }}
-                    <div><strong>Your balance: {{balance}} </strong></div>
-                {{/if}}
-
-                <br>
-            </li>
+        <li>
+            {{> user data=this}}
+            <br>
+        </li>
         {{/each}}
     </ul>
+    {{> space}}
+
+    {{> title text="Top user"}}
+    {{> line}}
+
+    <div>
+        {{> user data=data.userlist.[0]}}
+    </div>
+
+
 </div>
