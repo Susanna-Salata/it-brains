@@ -14,6 +14,32 @@ router.get('/users', function (req, res) {
     layout: 'header',
     title: 'Users page',
     text: 'Click me',
+
+    data: {
+      userlist: [
+        {
+          id: 5123,
+          name: "Ivan",
+          isAdmin: true,
+          isConfirm: true,
+          balance: 0,
+        },
+        {
+          id: 1234,
+          name: "Dima",
+          isAdmin: false,
+          isConfirm: false,
+          balance: 0,
+        },
+        {
+          id: 3123,
+          name: "Stepan",
+          isAdmin: true,
+          isConfirm: true,
+          balance: null,
+        },
+      ],
+    },
   })
 })
 

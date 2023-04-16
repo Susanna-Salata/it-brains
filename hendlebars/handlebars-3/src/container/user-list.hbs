@@ -4,4 +4,22 @@
     {{> title text="User list"}}
     {{> line}}
 
+    <ul>
+        {{#each data.userlist}}
+            <li>
+                <div>ID: {{id}} </div>
+                <div>Name: {{name}} </div>
+                {{#if isAdmin}}
+                    <button>Send report</button>
+                {{else}}
+                    <button>Send messadge</button>
+                {{/if}}
+
+                {{#unless isConfirm}}
+                    <div><strong>You need a varification</strong></div>
+                    
+                {{/unless}}
+            </li>
+        {{/each}}
+    </ul>
 </div>
