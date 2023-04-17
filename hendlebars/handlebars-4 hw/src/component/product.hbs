@@ -1,8 +1,13 @@
 
 <!-- product.hbs -->
 <div>
-  <button>Buy</button>
-  <p>{{name}}</p>
-  <span>{{cost}}</span>
-  <img src="{{img}}" alt="{{name}}">
-</div>
+  <div>
+    <p> {{title}} </p>
+    <span> {{price}} </span>
+    <img src="{{img}}" alt="{{name}}">
+    {{#if isAvailable}}
+      <button>Buy</button>
+    {{else}}
+      <button>Not available</button>
+    {{/if}}
+  </div>

@@ -16,10 +16,10 @@ router.get('/product', function (req, res) {
     text: 'Click me',
 
     product: {
-      name: 'Fish food',
-      cost: '72.50',
+      title: 'Fish food',
+      price: '72.50',
       img: '/img/fish.png',
-      isAvaliable: true,
+      isAvailable: true,
     },
   })
 })
