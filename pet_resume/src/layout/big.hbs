@@ -25,23 +25,7 @@
     <br>
     <hr>
 
-	{{#with footer}}
-		<footer>
-      <div>
-          {{#with social}}
-              {{> link text=email.text href=email.href blank=true }}
-              {{> link text=phone.text href=phone.href blank=true }}
-              {{> link text=facebook.text href=facebook.href blank=true }}
-          {{/with}}
-      </div>
-      <br>
-      <div>
-          <em> Copyright by {{../header.name.firstname}} {{../header.name.lastname}} </em> 
-          <br>
-          <em>{{../header.address}}</em>
-      </div>
-		</footer>
-	{{/with}}
+    {{> footer social=footer.social firstname=header.name.firstname lastname=header.name.lastname address=header.address}}
   </body>
 
 </html>
