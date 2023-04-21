@@ -11,7 +11,7 @@ var header = {
 		lastname: 'Salata',
 	},
 	position: 'Junior Fullstack JS Developer', 
-	salary: '600$',
+	salary: '800$',
 	address: "Gdansk, Polsnd",
 }
 
