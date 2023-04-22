@@ -1,0 +1,57 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+  <h1>{{program.excursion.name}}</h1>
+  <h2>Location: {{program.excursion.location.city}}, {{program.excursion.location.country}}</h2>
+  <h2>Date: {{program.excursion.date}}</h2>
+
+  {{#each program.excursion.program}}
+    <h3>{{name}}</h3>
+    <p>Type: {{type}}</p>
+    <p>Duration: {{duration}} hours</p>
+
+    {{#if details.museum}}
+      <h4>Museum Visit</h4>
+      <p>Museum: {{details.museum.name}}</p>
+      <p>Address: {{details.museum.location.address}}, {{details.museum.location.city}}, {{details.museum.location.country}}</p>
+      <ul>
+        {{#each details.museum.exhibits}}
+          <li>
+            <p>{{name}} by {{artist}}</p>
+            <p>{{description}}</p>
+            {{#if audio_guide}}
+              <p>Audio guide available</p>
+            {{/if}}
+          </li>
+        {{/each}}
+      </ul>
+    {{/if}}
+
+    {{#if details.venue}}
+      <h4>Cultural Show</h4>
+      <p>Venue: {{details.venue.name}}</p>
+      <p>Address: {{details.venue.location.address}}, {{details.venue.location.city}}, {{details.venue.location.country}}</p>
+      <ul>
+        {{#each details.performers}}
+          <li>
+            <p>{{name}} - {{type}}</p>
+          </li>
+        {{/each}}
+      </ul>
+    {{/if}}
+
+    {{#if details.guide}}
+      <p>Guide: {{details.guide.name}} - {{details.guide.language}} - Rating: {{details.guide.rating}}</p>
+    {{/if}}
+
+    <hr>
+  {{/each}}
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
