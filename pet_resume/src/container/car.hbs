@@ -1,0 +1,54 @@
+{{!-- 
+Це код container файлу для bio сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/bio"
+--}}
+
+<div class="car-details">
+  <h2>{{make}} {{model}}</h2>
+  <p>Year: {{year}}</p>
+  <p>Color: {{color}}</p>
+
+  <h3>Interior Features</h3>
+  <ul>
+    <li>Seats: {{features.interior.seats.material}}, {{features.interior.seats.color}}, {{#if features.interior.seats.heated}}heated{{/if}}{{#if features.interior.seats.ventilated}}, ventilated{{/if}}</li>
+    <li>Dashboard: {{features.interior.dashboard.material}}, {{features.interior.dashboard.color}}, Display Type: {{features.interior.dashboard.display.type}}, Size: {{features.interior.dashboard.display.size}}, Resolution: {{features.interior.dashboard.display.resolution}}, {{#if features.interior.dashboard.display.touchscreen}}touchscreen{{/if}}</li>
+    <li>Audio: {{features.interior.audio.system}} with {{features.interior.audio.speakers}} speakers{{#if features.interior.audio.subwoofer}}, subwoofer{{/if}}{{#if features.interior.audio.bluetooth}}, Bluetooth{{/if}}{{#if features.interior.audio.USB}}, USB{{/if}}</li>
+  </ul>
+
+  <h3>Exterior Features</h3>
+  <ul>
+    <li>Wheels: {{features.exterior.wheels.size}} inch {{features.exterior.wheels.type}} wheels, color: {{features.exterior.wheels.color}}</li>
+    <li>Headlights: {{features.exterior.headlights.type}}, brightness: {{features.exterior.headlights.brightness}}, {{#if features.exterior.headlights.automatic}}automatic{{/if}}</li>
+    <li>Sunroof: {{features.exterior.sunroof.type}} {{features.exterior.sunroof.size}}, {{#if features.exterior.sunroof.automatic}}automatic{{/if}}</li>
+  </ul>
+
+  <h3>Safety Features</h3>
+  <ul>
+    <li>Airbags: front: {{features.safety.airbags.front}}, side: {{features.safety.airbags.side}}, knee: {{features.safety.airbags.knee}}, rear: {{features.safety.airbags.rear}}</li>
+    <li>Assistance: {{#if features.safety.assistance.blind_spot_monitoring}}blind spot monitoring{{/if}}{{#if features.safety.assistance.rear_cross_traffic_alert}}, rear cross traffic alert{{/if}}{{#if features.safety.assistance.lane_departure_warning}}, lane departure warning{{/if}}{{#if features.safety.assistance.adaptive_cruise_control}}, adaptive cruise control{{/if}}{{#if features.safety.assistance.collision_warning}}, collision warning{{/if}}</li>
+  </ul>
+
+  <h3>Engine</h3>
+  <ul>
+    <li>Type: {{engine.type}}, Displacement: {{engine.displacement}} L, Horsepower: {{engine.horsepower}}, Torque: {{engine.torque}}</li>
+    <li>Transmission: {{engine.transmission.type}}, {{engine.transmission.gears}} speeds</li>
+  </ul>
+
+  <h3>Fuel Economy</h3>
+  <ul>
+    <li>City: {{fuel_economy.city}}, Highway: {{fuel_economy.higway}}, Combined: {{fuel_economy.combined}},
+  </ul>
+
+  <h3>Price</h3>
+  <ul>
+    <li>Base: {{price.base}}, Destination: {{price.destination}}</li>
+    Options:
+    <li>Navigation: {{price.options.navigation}}, Moonroof: {{price.options.moonroof}}, Premium_paint {{price.options.premium_paint}} </li>
+
+  </ul>
+
+  <h3>Total: {{price.total}}</h3>
+  
+</div>
+
+
