@@ -1,0 +1,47 @@
+{{!-- 
+Це код container файлу для facebook сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/facebook"
+--}}
+
+<div>
+
+    <h1>{{ name }}</h1>
+    <ul>
+      {{#each users}}
+        <li>
+          <strong>{{ name }}</strong> ({{ gender }}, {{ age }} years old)
+          <ul>
+            {{#each friends}}
+              <li>
+                <strong>{{ name }}</strong> ({{ gender }}, {{ age }} years old)
+                <ul>
+                  {{#each mutual_friends}}
+                    <li>
+                      <strong>{{ name }}</strong> ({{ gender }}, {{ age }} years old)
+                    </li>
+                  {{/each}}
+                </ul>
+              </li>
+            {{/each}}
+          </ul>
+          <ul>
+            {{#each groups}}
+              <li>
+                <strong>{{ name }}</strong>: {{ description }}
+                <ul>
+                  {{#each members}}
+                    <li>
+                      {{ name }} ({{ gender }}, {{ age }} years old)
+                    </li>
+                  {{/each}}
+                </ul>
+              </li>
+            {{/each}}
+          </ul>
+        </li>
+      {{/each}}
+    </ul>
+  
+</div>
+
+
