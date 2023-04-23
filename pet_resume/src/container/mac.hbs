@@ -1,0 +1,48 @@
+{{!-- 
+Це код container файлу для bio сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/bio"
+--}}
+
+<div>
+  <h1>{{name}}</h1>
+  <p>{{description}}</p>
+  <h2>Price: {{price}}</h2>
+  <h2>Category: {{category}}</h2>
+  <hr>
+
+  <h2>Features:</h2>
+  <ul>
+    <li><strong>Processor:</strong> {{features.processor.brand}} {{features.processor.model}} ({{features.processor.speed}})</li>
+    <li><strong>Memory:</strong> {{features.memory.size}} {{features.memory.type}} ({{features.memory.speed}})</li>
+    <li><strong>Storage:</strong> {{features.storage.size}} {{features.storage.type}}</li>
+    <li><strong>Display:</strong> {{features.display.size}} {{features.display.technology}} ({{features.display.resolution}})</li>
+    <li><strong>Graphics:</strong> {{features.graphics.brand}} {{features.graphics.model}} ({{features.graphics.memory}})</li>
+    <li><strong>Ports:</strong>
+      <ul>
+        {{#each features.ports}}
+        <li>{{this.type}} ({{this.count}})</li>
+        <ul>
+          {{#each this.features}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        {{/each}}
+      </ul>
+    </li>
+    <li><strong>Battery:</strong> {{features.battery.type}} {{features.battery.capacity}} ({{features.battery.life}})</li>
+    <li><strong>Weight:</strong> {{features.weight}}</li>
+    <li><strong>Dimensions:</strong> {{features.dimensions.height}} x {{features.dimensions.width}} x {{features.dimensions.depth}}</li>
+    <li><strong>Operating System:</strong> {{features.operating_system}}</li>
+  </ul>
+
+  <hr>
+  <h2>Accessories:</h2>
+  <ul>
+    {{#each features.accessories}}
+    <li>{{this.name}} ({{this.price}})</li>
+    {{/each}}
+  </ul>
+</div>
+
+
+
